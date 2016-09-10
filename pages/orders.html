@@ -1,0 +1,66 @@
+<div class="text-style">
+    <div>
+        <h2>
+            <small><span class="text-style">Orders</span></small>
+        </h2>
+        <form name="form" class="row">
+            <h6><span class="text-style">Make new order</span></h6>
+            <div>
+                <label>First Name<span class="asterisk">*</span> </label>
+                <input name="firstName" type="text" ng-model="firstName" required/>
+            </div>
+            <div>
+                <label>Last Name<span class="asterisk">*</span> </label>
+                <input name="lastName" type="text" ng-model="lastName" required/>
+            </div>
+            <div>
+                <label>Date of Order <span class="asterisk">*</span> </label>
+                <input name="dateOfOrder" type="date" ng-model="dateOfOrder" required/>
+            </div>
+            <div>
+                <label>Order Amount <span class="asterisk">*</span> </label>
+                <input name="orderAmount" type="number" ng-model="orderAmount" required/>
+            </div>
+            <div>
+                <label>Order Status <span class="asterisk">*</span> </label>
+                <input placeholder="Choose status" name="orderStatus" list="orderStatus" ng-model="orderStatus"
+                       required>
+                <datalist id="orderStatus">
+                    <option>Completed</option>
+                    <option>In progress</option>
+                    <option>Cancelled</option>
+                </datalist>
+                </input>
+            </div>
+            <div>
+                <button class="small radius" ng-click="addNewOrder(firstName, lastName)" ng-hide="currentID > -1" ng-disabled="(form.$error.required)">Add</button>
+                <button class="small radius" ng-click="saveOrder()" ng-show="currentID > -1" ng-disabled="(form.$error.required)">Save</button>
+            </div>
+        </form>
+
+        <table width="100%" id="cards">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Client</th>
+                <th>Date</th>
+                <th>Order Amount</th>
+                <th>Order Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in cards">
+                <td>{{$index +1}}</td>
+                <td>{{ item.firstName }} {{ item.lastName }}</td>
+                <td>{{ item.dateOfOrder | date:'dd/MM/yyyy'}}</td>
+                <td>{{ item.orderAmount | currency }}</td>
+                <td>{{ item.orderStatus }}</td>
+                <td>
+                    <button class="tiny radius square" ng-click="editOrder($index)">&#x270e;</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

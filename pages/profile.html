@@ -1,0 +1,87 @@
+<div class="text-style">
+
+    <form name="form" class="row" novalidate>
+        <h5>
+            <span class="text-style">Profile</span>
+        </h5>
+        <br>
+        <div class="small-2 columns">
+            <label class="float-left"><b>First Name:</b></label>
+        </div>
+        <div>
+            <label ng-if="!flag" class="float-left">{{ client.firstName }}</label>
+            <input ng-if="flag" name="firstName" type="text" ng-model="client.firstName" required/>
+        </div>
+        <br ng-if="!flag">
+        <div class="small-2 columns">
+            <label class="float-left"><b>Last Name:</b></label>
+        </div>
+        <div>
+            <label ng-if="!flag" class="float-left">{{ client.lastName }}</label>
+            <input ng-if="flag" name="lastName" type="text" ng-model="client.lastName" required/>
+        </div>
+        <br ng-if="!flag">
+        <div class="small-2 columns">
+            <label class="float-left"><b>Date of Birth:</b></label>
+        </div>
+        <div>
+            <label ng-if="!flag" class="float-left">{{ client.dateOfBirth | date:'dd/MM/yyyy'}}</label>
+            <input ng-if="flag" name="dateOfBirth" type="date" ng-model="client.dateOfBirth" required/>
+        </div>
+        <br ng-if="!flag">
+        <div class="small-2 columns">
+            <label class="float-left"><b>Address:</b></label>
+        </div>
+        <div>
+            <label ng-if="!flag" class="float-left">{{ client.address }}</label>
+            <input ng-if="flag" name="address" type="text" ng-model="client.address" required/>
+
+        </div>
+        <br ng-if="!flag">
+        <div class="small-2 columns">
+            <label class="float-left"><b>Phone:</b></label>
+        </div>
+        <div>
+            <label ng-if="!flag" class="float-left">{{ client.phone }}</label>
+            <input ng-if="flag" name="phone" type="text" ng-model="client.phone" required/>
+
+        </div>
+        <br ng-if="!flag">
+        <div class="small-2 columns">
+            <label class="float-left"><b>Email:</b></label>
+        </div>
+        <div>
+            <label ng-if="!flag" class="float-left">{{ client.email }}</label>
+            <input ng-if="flag" name="email" type="email" ng-model="client.email" required/>
+        </div>
+        <br ng-if="!flag">
+        <div>
+            <button class="small radius" ng-disabled="(form.$error.required)" ng-click="saveCar(client.id-1)"
+                    ng-if="flag">Save
+            </button>
+        </div>
+        <div>
+            <button class="small radius" ng-click="editProfile(client.id-1)">&#x270e;</button>
+            <button class="small radius" ng-click="showCars()" ng-show="!flag2">Show client's car</button>
+            <button class="small radius alert" ng-click="hideCars()" ng-show="flag2">Hide client's car</button>
+        </div>
+
+    </form>
+    <table width="100%" ng-if="flag2">
+        <thead>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>VIN</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in client.cars">
+            <td>{{item.make}}</td>
+            <td>{{item.model}}</td>
+            <td>{{item.year}}</td>
+            <td>{{item.VIN}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

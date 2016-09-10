@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/foundation.min.css">
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-ui-router.min.js"></script>
+    <script src="scripts/script.js"></script>
+</head>
+
+<body class="bg">
+<div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+        <ul class="title-area">
+            <li>
+                <a ui-sref="/"><span style="color: white;" class="text-style">&#x272a;</span></a>
+            </li>
+        </ul>
+
+        <section class="top-bar-section">
+            <ul class="right">
+                <li><a ui-sref="/"><span class="text-style">Home</span></a></li>
+                <li><a ui-sref="/cards"><span class="text-style">Cards</span></a></li>
+                <li><a ui-sref="/orders"><span class="text-style">Orders</span></a></li>
+            </ul>
+        </section>
+    </nav>
+</div>
+
+<ui-view></ui-view>
+
+</body>
+</html>

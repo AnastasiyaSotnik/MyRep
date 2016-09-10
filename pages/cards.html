@@ -1,0 +1,45 @@
+<div class="text-style">
+    <h2><small><span class="text-style">Cards</span></small></h2>
+    <form name="form" class="row">
+        <h6><span class="text-style">New card</span></h6>
+        <div>
+            <label>First Name <span class="asterisk">*</span> </label>
+            <input name="firstName" type="text" ng-model="firstName" required/>
+        </div>
+        <div>
+            <label>Last Name <span class="asterisk">*</span> </label>
+            <input name="lastName" type="text" ng-model="lastName" required/>
+        </div>
+        <div class="small-11 columns" ng-disabled="(form.$error.required)">
+            <button class="small radius" ng-click="addNewPerson(firstName, lastName)" >Add</button>
+        </div>
+    </form>
+
+<br>
+
+    <h6><span class="text-style">Existing cards</span></h6>
+
+    <input type="search" name="search" placeholder="Search by client" ng-model="search">
+
+    <table id="cards" width="100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Owner</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in cards | filter:search">
+            <td>{{ $index + 1 }}</td>
+            <td>
+                <a href="#/profile" ng-click="showProfile(item)" class="secondary radius">{{
+                    item.firstName }} {{ item.lastName }}</a>
+            </td>
+            <td>
+                <button class="tiny radius alert square" ng-click="deletePerson($index)">&#x2718;</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

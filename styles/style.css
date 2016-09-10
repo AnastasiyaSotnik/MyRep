@@ -1,0 +1,36 @@
+.bg {
+    width: 100%;
+    background: azure url("../images/bg.jpg") ;
+}
+
+button {
+    font-family: "Axure Handwriting";
+    font-size: 13pt !important;
+}
+
+.asterisk {
+    color: red;
+    font-size: 13pt;
+}
+
+input.ng-valid {
+    background-color: #F0FFFF;
+}
+
+input.ng-invalid {
+    background-color: antiquewhite;
+}
+
+.square {
+    width: 3em;
+    height: 3em;
+}
+
+    .text-style {
+        font-size: 2em;
+    font-family: "Axure Handwriting";
+}
+
+.sticky {
+    height: 3.5em;
+}

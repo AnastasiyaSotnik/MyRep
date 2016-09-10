@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "cars": [
+      {
+        "make": "Audi",
+        "model": "Q3",
+        "year": 2016,
+        "VIN": 12345
+      }
+    ],
+    "firstName": "Anastasia",
+    "lastName": "Ivanova",
+    "dateOfBirth": "11/01/1996",
+    "address": "3, Lenin Street, Minsk, Belarus",
+    "phone": 375291274180,
+    "email": "nasty@mail.ru",
+    "dateOfOrder": "11/05/2016",
+    "orderAmount": 1000,
+    "orderStatus": "Completed"
+  },
+  {
+    "id": 2,
+    "cars": [
+      {
+        "make": "Volvo",
+        "model": "S90",
+        "year": 2016,
+        "VIN": 67890
+      }
+    ],
+    "firstName": "Ivan",
+    "lastName": "Sidorov",
+    "dateOfBirth": "11/11/1995",
+    "address": "13, Komsomolskaya Street, Minsk, Belarus",
+    "phone": 375295400000,
+    "email": "ivan@gmail.com",
+    "dateOfOrder": "21/05/2016",
+    "orderAmount": 100,
+    "orderStatus": "In Progress"
+  },
+  {
+    "id": 3,
+    "cars": [
+      {
+        "make": "Mercedes",
+        "model": "Maybach 6",
+        "year": 2016,
+        "VIN": 13579
+      }
+    ],
+    "firstName": "Alexandra",
+    "lastName": "Petrova",
+    "dateOfBirth": "01/05/1995",
+    "address": "1, Kirova Street, Moscow, Russia",
+    "phone": 78003330890,
+    "email": "alex@yahoo.com",
+    "dateOfOrder": "20/08/2016",
+    "orderAmount": 10000,
+    "orderStatus": "Cancelled"
+  }
+]
