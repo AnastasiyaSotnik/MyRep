@@ -1,0 +1,4 @@
+Welcome to service station system for the administrator!
+Press "Cards" to get an access to cards of clients. There you can create new client, which has not already been in base. Also you can see existing clients.
+Press the name of any client to get access to his profile. There you can see all information about the client and see his cars.
+Press "Orders" to get access to orders. There you can make new order to clients, which has already been in base. Also you can see all orders.
